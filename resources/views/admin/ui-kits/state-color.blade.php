@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 
-@section('title')State Color {{ $title }}
+@section('title')Cadastro de Alunos{{ $title }}
 @endsection
 
 @push('css')
@@ -8,10 +8,10 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('breadcrumb_title')
-            <h3>State Color</h3>
+            <h3>Cadastro de Alunos</h3>
         @endslot
         <li class="breadcrumb-item">Base</li>
-        <li class="breadcrumb-item active">State Color</li>
+        <li class="breadcrumb-item active">Cadastrar</li>
     @endcomponent
 
     <div class="container-fluid">
@@ -19,21 +19,54 @@
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header pb-0">
-                <h5>Default Color</h5>
+                <h5>Alunos</h5>
               </div>
               <div class="card-body">
                 <div class="color-box">
-                  <button class="btn btn-primary btn-square digits">#ba895d</button>
-                  <button class="btn btn-square digits btn-secondary">#148df6</button>
-                  <button class="btn btn-square digits btn-success">#51bb25</button>
-                  <button class="btn btn-square digits btn-info">#7a15f7</button>
-                  <button class="btn btn-square digits btn-warning">#ff5f24</button>
-                  <button class="btn btn-square digits btn-danger">#fd2e64</button>
-                  <button class="btn btn-square digits btn-light">#e8ebf2</button>
-                  <button class="btn btn-square digits btn-dark">#2c323f</button>
+                  <label for="exampleFormControlInput1">Nome do responsável</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome do responsável">
+                </div></br>
+                <div class="color-box">
+                  <label for="exampleFormControlInput1">Contacto do responsável</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="contacto do responsável">
+                </div></br>
+                <div class="color-box">
+                  <label for="exampleFormControlInput1">Nome do aluno</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome do aluno">
+                </div></br>
+                <div class="row">
+                  <div class="col-sm-12 col-xl-6">
+                      <label for="exampleFormControlInput1">Nascimento</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nascimento">
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+                      <label for="exampleFormControlInput1">Sexo</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="sexo">
+                  </div>
                 </div>
-              </div>
+                <div class="row">
+                  <div class="col-sm-12 col-xl-6">
+                      <label for="exampleFormControlInput1">Turno</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="turno">
+                  </div>
+                  <div class="col-sm-12 col-xl-6">
+                      <label for="exampleFormControlInput1">Nível</label>
+                      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nivel">
+                  </div>
+                </div>
+                <div class="color-box">
+                  <label for="exampleFormControlInput1">Morada</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="morada">
+                </div></br>
+                <div class="color-box">
+                  <label for="exampleFormControlInput1">Escola</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="escola">
+                </div><p></p></br>
+                <div class="color-box">
+                  <button class="btn btn-success-gradien" type="button">Salvar</button>
+                </div>
             </div>
+<!-- <p>
             <div class="card">
               <div class="card-header pb-0">
                 <h5>Color</h5>
@@ -203,6 +236,7 @@
                 </div>
               </div>
             </div>
+</p> -->
           </div>
         </div>
     </div>

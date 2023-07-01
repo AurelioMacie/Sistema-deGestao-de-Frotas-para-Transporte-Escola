@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 
-@section('title')Typography {{ $title }}
+@section('title')Listar Alunos{{ $title }}
 @endsection
 
 @push('css')
@@ -10,10 +10,10 @@
 @section('content')
     @component('components.breadcrumb')
         @slot('breadcrumb_title')
-            <h3>Typography</h3>
+            <h3>Lista de Alunos</h3>
         @endslot
         <li class="breadcrumb-item">Base</li>
-        <li class="breadcrumb-item active">Typography</li>
+        <li class="breadcrumb-item active">Listar</li>
     @endcomponent
 
     <div class="container-fluid">
@@ -21,30 +21,19 @@
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header pb-0">
-                <h5>Headings</h5><span>All HTML headings, <code>&lt;h1&gt;</code> through <code>&lt;h6&gt;</code>, are available.</span>
+                <h5>Alunos</h5>
               </div>
               <div class="card-body typography">
                 <div class="row">
-                  <div class="col-sm-12 col-xl-6">
-                    <h1>This is a Heading 1</h1>
-                    <h2>This is a Heading 2</h2>
-                    <h3>This is a Heading 3</h3>
-                    <h4>This is a Heading 4</h4>
-                    <h5>This is a Heading 5</h5>
-                    <h6>This is a Heading 6</h6>
-                  </div>
-                  <div class="col-sm-12 col-xl-6">
-                    <p class="h1 txt-primary">Heading 1<small>Sub Heading</small></p>
-                    <p class="h2 txt-secondary">Heading 2<small>Sub Heading</small></p>
-                    <p class="h3 txt-success">Heading 3<small>Sub Heading</small></p>
-                    <p class="h4 txt-info">Heading 4<small>Sub Heading</small></p>
-                    <p class="h5 txt-warning">Heading 5<small>Sub Heading</small></p>
-                    <p class="h6 txt-danger">Heading 6<small>Sub Heading</small></p>
+                  <div class="color-box">
+                    <label for="exampleFormControlInput1">Nome</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome">
                   </div>
                 </div>
               </div>
             </div>
           </div>
+<!-- <p>
           <div class="col-sm-12 col-xl-4">
             <div class="card">
               <div class="card-header pb-0">
@@ -309,6 +298,8 @@
               </div>
             </div>
           </div>
+</p>           -->
+<!-- <p>
           <div class="col-sm-12">
             <div class="card">
               <div class="card-header pb-0">
@@ -345,6 +336,7 @@
               </div>
             </div>
           </div>
+</p>           -->
         </div>
     </div>
 

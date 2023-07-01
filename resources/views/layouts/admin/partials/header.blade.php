@@ -10,7 +10,7 @@
         <li>
           <form class="form-inline search-form">
             <div class="search-bg"><i class="fa fa-search"></i>
-              <input class="form-control-plaintext" placeholder="Search here.....">
+              <input class="form-control-plaintext" placeholder="Procurar por.....">
             </div>
           </form>
           <span class="d-sm-none mobile-search search-bg"><i class="fa fa-search"></i></span>
@@ -121,7 +121,7 @@
           </ul>
         </li>
         <li class="onhover-dropdown p-0">
-          <button class="btn btn-primary-light" type="button"><i data-feather="log-out"></i>Log out</button>
+          <button class="btn btn-primary-light" type="button"><i data-feather="log-out"></i>Sair</button>
         </li>
       </ul>
     </div>
