@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('admin')->group(function () {
 });
 
-Route::prefix('dashboard')->group(function () {
-	Route::view('dashboard-02', 'admin.dashboard.dashboard-02')->name('dashboard-02');
-});
+// Route::prefix('dashboard')->group(function () {
+// 	Route::view('dashboard-02', 'admin.dashboard.dashboard-02')->name('dashboard-02');
+// });
 
 Route::prefix('widgets')->group(function () {
 	Route::view('general-widget', 'admin.widgets.general-widget')->name('general-widget');
