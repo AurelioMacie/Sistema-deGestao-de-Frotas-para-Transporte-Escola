@@ -1,20 +1,21 @@
-@extends('layouts.admin.master')
 
-@section('title')Listar Alunos{{ $title }}
-@endsection
 
-@push('css')
-<link rel="stylesheet" type="text/css" href="{{asset('assets/css/prism.css')}}">
-@endpush
+<?php $__env->startSection('title'); ?>Listar Alunos<?php echo e($title); ?>
 
-@section('content')
-    @component('components.breadcrumb')
-        @slot('breadcrumb_title')
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startPush('css'); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/prism.css')); ?>">
+<?php $__env->stopPush(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php $__env->startComponent('components.breadcrumb'); ?>
+        <?php $__env->slot('breadcrumb_title'); ?>
             <h3>Lista de Alunos</h3>
-        @endslot
+        <?php $__env->endSlot(); ?>
         <li class="breadcrumb-item">Base</li>
         <li class="breadcrumb-item active">Listar</li>
-    @endcomponent
+    <?php echo $__env->renderComponent(); ?>
 
     <div class="container-fluid">
         <div class="row">
@@ -340,7 +341,8 @@
         </div>
     </div>
 
-    @push('scripts') 
-        <script src="{{ asset('assets/js/tooltip-init.js')}}"></script>
-    @endpush
-@endsection
+    <?php $__env->startPush('scripts'); ?> 
+        <script src="<?php echo e(asset('assets/js/tooltip-init.js')); ?>"></script>
+    <?php $__env->stopPush(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\sgfte\theme\resources\views/admin/ui-kits/typography.blade.php ENDPATH**/ ?>

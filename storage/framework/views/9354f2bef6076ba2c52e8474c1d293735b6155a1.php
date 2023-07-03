@@ -20,8 +20,8 @@
                     <li class="dropdown">
                         <a class="nav-link menu-title <?php echo e(prefixActive('/ui-kits')); ?>" href="javascript:void(0)"><i data-feather="box"></i><span>Alunos</span></a>
                         <ul class="nav-submenu menu-content" style="display: <?php echo e(prefixBlock('/ui-kits')); ?>;">
-                            <li><a href="<?php echo e(route('state-color')); ?>" class="<?php echo e(routeActive('state-color')); ?>">Cadastrar</a></li>
-                            <li><a href="<?php echo e(route('typography')); ?>" class="<?php echo e(routeActive('typography')); ?>">Listar</a></li>
+                            <li><a href="<?php echo e(route('estudante-create')); ?>" class="<?php echo e(routeActive('state-color')); ?>">Cadastrar</a></li>
+                            <li><a href="<?php echo e(route('estudante')); ?>" class="<?php echo e(routeActive('typography')); ?>">Listar</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

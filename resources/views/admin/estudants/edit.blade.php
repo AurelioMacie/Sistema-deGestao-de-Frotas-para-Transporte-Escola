@@ -1,19 +1,18 @@
+@extends('layouts.admin.master')
 
+@section('title')Cadastro de Alunos{{ $title }}
+@endsection
 
-<?php $__env->startSection('title'); ?>Cadastro de Alunos<?php echo e($title); ?>
-
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startPush('css'); ?>
-<?php $__env->stopPush(); ?>
-<?php $__env->startSection('content'); ?>
-    <?php $__env->startComponent('components.breadcrumb'); ?>
-        <?php $__env->slot('breadcrumb_title'); ?>
+@push('css')
+@endpush
+@section('content')
+    @component('components.breadcrumb')
+        @slot('breadcrumb_title')
             <h3>Cadastro de Alunos</h3>
-        <?php $__env->endSlot(); ?>
+        @endslot
         <li class="breadcrumb-item">Base</li>
         <li class="breadcrumb-item active">Cadastrar</li>
-    <?php echo $__env->renderComponent(); ?>
+    @endcomponent
 
     <div class="container-fluid">
         <div class="row">
@@ -70,8 +69,7 @@
         </div>
     </div>
 
-    <?php $__env->startPush('scripts'); ?>  
-        <script src="<?php echo e(asset('assets/js/tooltip-init.js')); ?>"></script>  
-    <?php $__env->stopPush(); ?>
-<?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\sgfte\theme\resources\views/admin/ui-kits/state-color.blade.php ENDPATH**/ ?>
+    @push('scripts')  
+        <script src="{{asset('assets/js/tooltip-init.js')}}"></script>  
+    @endpush
+@endsection

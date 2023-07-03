@@ -20,8 +20,8 @@
                     <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/ui-kits') }}" href="javascript:void(0)"><i data-feather="box"></i><span>Alunos</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/ui-kits') }};">
-                            <li><a href="{{ route('state-color')}}" class="{{routeActive('state-color')}}">Cadastrar</a></li>
-                            <li><a href="{{ route('typography')}}" class="{{routeActive('typography')}}">Listar</a></li>
+                            <li><a href="{{ route('estudante-create')}}" class="{{routeActive('state-color')}}">Cadastrar</a></li>
+                            <li><a href="{{ route('estudante')}}" class="{{routeActive('typography')}}">Listar</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

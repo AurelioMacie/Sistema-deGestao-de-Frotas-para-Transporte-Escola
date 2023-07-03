@@ -6,6 +6,7 @@ use App\Http\Controllers\MotoristaController;
 use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\ManutencaoController;
 use App\Http\Controllers\RotaController;
+use App\Http\Controllers\EstudanteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -88,4 +89,13 @@ Route::prefix('rota')->group(function(){
     Route::get('/{id}/edit', [RotaController::class, 'edit'])->name('rota-edit');
     Route::put('/{id}', [RotaController::class, 'update'])->name('rota-update');
     Route::delete('/{id}', [RotaController::class, 'destroy'])->name('rota-destroy');
+});
+
+Route::prefix('estudante')->group(function(){
+    Route::get('/', [EstudanteController::class, 'index'])->name('estudante');
+    Route::get('/create', [EstudanteController::class, 'create'])->name('estudante-create');
+    Route::post('/', [EstudanteController::class, 'store'])->name('estudante-store');
+    Route::get('/{id}/edit', [EstudanteController::class, 'edit'])->name('estudante-edit');
+    Route::put('/{id}', [EstudanteController::class, 'update'])->name('estudante-update');
+    Route::delete('/{id}', [EstudanteController::class, 'destroy'])->name('estudante-destroy');
 });
