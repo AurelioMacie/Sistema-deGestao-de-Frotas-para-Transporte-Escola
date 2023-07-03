@@ -55,10 +55,8 @@
                     <li class="dropdown">
                         <a class="nav-link menu-title {{ prefixActive('/ecommerce') }}" href="javascript:void(0)"><i data-feather="cloud"></i><span>Rotas</span></a>
                         <ul class="nav-submenu menu-content" style="display: {{ prefixBlock('/ecommerce') }};">
-                            <li><a href="{{ route('product') }}" class="{{routeActive('buttons')}}">Cadastrar</a></li>
-                            <li><a href="{{ route('product-page') }}" class="{{routeActive('buttons-flat')}}">Desenhar</a></li>
-                            <li><a href="{{ route('list-products') }}" class="{{routeActive('buttons-edge')}}">Gerenciar</a></li>
-                            <li><a href="{{ route('payment-details') }}" class="{{routeActive('raised-button')}}">importar</a></li>
+                            <li><a href="{{ route('rota-create') }}" class="{{routeActive('buttons')}}">Cadastrar</a></li>
+                            <li><a href="{{ route('rota') }}" class="{{routeActive('buttons-flat')}}">Listar</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

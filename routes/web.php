@@ -5,6 +5,7 @@ use App\Http\Controllers\OficinaController;
 use App\Http\Controllers\MotoristaController;
 use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\ManutencaoController;
+use App\Http\Controllers\RotaController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -78,4 +79,13 @@ Route::prefix('manutencao')->group(function(){
     Route::get('/', [ManutencaoController::class, 'index'])->name('manutencao');
     Route::get('/create', [ManutencaoController::class, 'create'])->name('manutencao-create');
     Route::post('/', [ManutencaoController::class, 'store'])->name('manutencao-store');
+});
+
+Route::prefix('rota')->group(function(){
+    Route::get('/', [RotaController::class, 'index'])->name('rota');
+    Route::get('/create', [RotaController::class, 'create'])->name('rota-create');
+    Route::post('/', [RotaController::class, 'store'])->name('rota-store');
+    Route::get('/{id}/edit', [RotaController::class, 'edit'])->name('rota-edit');
+    Route::put('/{id}', [RotaController::class, 'update'])->name('rota-update');
+    Route::delete('/{id}', [RotaController::class, 'destroy'])->name('rota-destroy');
 });
