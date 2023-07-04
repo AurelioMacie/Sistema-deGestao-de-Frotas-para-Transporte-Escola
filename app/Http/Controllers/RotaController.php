@@ -18,7 +18,7 @@ class RotaController extends Controller
 
     public function store(Request $request){
         Rota::create($request->all());
-        return redirect()->route('rota');
+        return redirect()->route('rota-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
     }
 
     public function edit($id){

@@ -22,7 +22,7 @@ class ManutencaoController extends Controller
 
     public function store(Request $request){
         Manutencao::create($request->all());
-        return redirect()->route('manutencao');
+        return redirect()->route('manutencao-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
         
     }
 

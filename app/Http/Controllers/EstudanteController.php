@@ -20,7 +20,7 @@ class EstudanteController extends Controller
 
     public function store(Request $request){
         Estudante::create($request->all());
-        return redirect()->route('estudante');
+        return redirect()->route('estudante-create')->with('success', 'Seu cadastro foi realizado com sucesso!');;
     }
 
     public function edit($id){

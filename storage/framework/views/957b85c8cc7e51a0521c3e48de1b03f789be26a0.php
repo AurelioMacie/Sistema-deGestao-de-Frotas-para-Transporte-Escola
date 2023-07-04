@@ -12,7 +12,7 @@
 <?php $__env->startSection('content'); ?>
 	<?php $__env->startComponent('components.breadcrumb'); ?>
 		<?php $__env->slot('breadcrumb_title'); ?>
-			<h3>Cadastro de Escola</h3>
+			<h3>Visualização de escolas</h3>
 		<?php $__env->endSlot(); ?>
 		<li class="breadcrumb-item">Base</li>
 		<li class="breadcrumb-item active">Visualizar</li>

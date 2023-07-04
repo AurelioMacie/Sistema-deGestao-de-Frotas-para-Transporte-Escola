@@ -18,7 +18,7 @@ class MotoristaController extends Controller
 
     public function store(Request $request){
         Motorista::create($request->all());
-        return redirect()->route('motorista');
+        return redirect()->route('motorista-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
     }
 
     public function edit($id){

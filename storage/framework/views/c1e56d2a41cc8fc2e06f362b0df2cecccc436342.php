@@ -39,7 +39,7 @@
 						<input type="text" class="form-control" name="destino" id="exampleFormControlInput1">
 					</div></br>
 					<div class="color-box">
-						<label for="exampleFormControlInput1">Descrição da via</label>
+						<label for="exampleFormControlInput1">Descrição da via usada</label>
 						<input type="text" class="form-control" name="descricao" id="exampleFormControlInput1" required="">
 					</div></p></br>
 					<div class="color-box">
