@@ -38,7 +38,7 @@
                                 </div></br>
                                 <div class="col-sm-12">
                                     <label for="exampleFormControlInput1">O Veiculo</label>
-                                    <select class="form-select" name="id_veiculo" size="1" required="">
+                                    <select class="form-select" name="id_veiculo" size="1">
                                     <?php $__currentLoopData = $veiculos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $veiculo): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <option value="<?php echo e($veiculo->id); ?>"><?php echo e($veiculo->placa); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -46,11 +46,11 @@
                                 </div></br>
                                 <div class="color-box">
                                     <label for="exampleFormControlInput1">Tipo de Serviço</label>
-                                    <input type="text" class="form-control" name="servico" id="exampleFormControlInput1" placeholder="motivo da manutenção" required="">
+                                    <input type="text" class="form-control" name="servico" id="exampleFormControlInput1" required="">
                                 </div></br>
                                 <div class="color-box">
                                     <label for="exampleFormControlInput1">Comentário</label>
-                                    <input type="text" class="form-control" name="comentario" id="exampleFormControlInput1" placeholder="">
+                                    <input type="text" class="form-control" name="comentario" id="exampleFormControlInput1" required="">
                                 </div><p></p></br>
                                 <div class="color-box">
                                     <button class="btn btn-success-gradien" type="submit">Salvar</button>

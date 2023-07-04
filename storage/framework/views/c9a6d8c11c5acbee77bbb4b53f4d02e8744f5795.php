@@ -1,21 +1,21 @@
 
 
-<?php $__env->startSection('title'); ?>Cadastro de Motoristas<?php echo e($title); ?>
+<?php $__env->startSection('title'); ?>Edição de Dados<?php echo e($title); ?>
 
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('css'); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/scrollable.css')); ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/tabela.css')); ?>">
 <script src="https://cdn.jsdelivr.net/npm/imask"></script>
 <?php $__env->stopPush(); ?>
 
 <?php $__env->startSection('content'); ?>
 	<?php $__env->startComponent('components.breadcrumb'); ?>
 		<?php $__env->slot('breadcrumb_title'); ?>
+			<h3>Cadastro de Motoristas</h3>
 		<?php $__env->endSlot(); ?>
 		<li class="breadcrumb-item">Base</li>
-        <li class="breadcrumb-item active">Cadastrar</li>
+        <li class="breadcrumb-item active">Edição</li>
     <?php echo $__env->renderComponent(); ?>
     
     <div class="container-fluid">
@@ -25,39 +25,41 @@
                     <div class="card-header pb-0">
                         <h5>Motoristas</h5>
                     </div>
-                    <form action="<?php echo e(route('motorista-store')); ?>" method="POST">
+                    <form action="<?php echo e(route('motorista-update', ['id'=>$motoristas->id])); ?>" method="POST">
                     <?php echo csrf_field(); ?>
+                    <?php echo method_field('PUT'); ?>
                     <div class="card-body">
                         <div class="color-box">
                             <label for="exampleFormControlInput1">Nome</label>
-                            <input type="text" class="form-control" name="nome" id="exampleFormControlInput1" required="">
+                            <input type="text" class="form-control" value="<?php echo e($motoristas->nome); ?>" name="nome" id="exampleFormControlInput1" placeholder="nome" required="">
                         </div></br>
                         <div class="color-box">
-                            <label for="exampleFormControlInput1">Telefone</label>
-                            <input type="text" class="form-control" name="telefone" id="contacto" placeholder="(+258) ##-###-##-##" required="">
+                            <label for="exampleFormControlInput1">Contacto</label>
+                            <input type="text" class="form-control" value="<?php echo e($motoristas->telefone); ?>" name="telefone" id="contacto" required="">
                         </div></br>
                         <div class="color-box">
                             <label for="exampleFormControlInput1">Número da carta de condução</label>
-                            <input type="text" class="form-control" name="documento" id="numero-documentos" required="">
+                            <input type="text" class="form-control" value="<?php echo e($motoristas->documento); ?>" name="documento" id="numero-documentos" required="">
                         </div></br>
                         <div class="color-box">
                             <label for="exampleFormControlInput1">Endereço</label>
-                            <input type="text" class="form-control" name="endereco" id="exampleFormControlInput1" required="">
+                            <input type="text" class="form-control" value="<?php echo e($motoristas->endereco); ?>" name="endereco" id="exampleFormControlInput1" required="">
                         </div></br>
                         <div class="row">
                             <div class="col-sm-12 col-xl-6">
                                 <label for="exampleFormControlInput1">Nascimento</label>
-                                <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" required="">
+                                <input type="date" class="form-control" value="<?php echo e($motoristas->nascimento); ?>" name="nascimento" id="exampleFormControlInput1" required="">
                             </div>
                             <div class="col-sm-12 col-xl-6">
                             <label for="exampleFormControlInput1" required="">Sexo</label>
                                 <select class="form-select" name="sexo" size="1">
+                                    <option><?php echo e($motoristas->sexo); ?></option>
                                     <option>M</option>
                                     <option>F</option>
                                 </select>
                             </div><p></p></br>
                             <div class="color-box">
-                                <button class="btn btn-success-gradien" type="submit">Salvar</button>
+                                <input class="btn btn-success" type="submit" value="Actualizar">
                             </div>
                         </div>
                     </div>
@@ -81,7 +83,6 @@
             var mask = IMask(element, maskOptions);
         });
     </script>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var element = document.getElementById('numero-documentos');
@@ -91,7 +92,8 @@
             var mask = IMask(element, maskOptions);
         });
     </script>
+
 <?php $__env->stopPush(); ?>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\sgfte\theme\resources\views/admin/drivers/create.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\sgfte\theme\resources\views/admin/drivers/edit.blade.php ENDPATH**/ ?>

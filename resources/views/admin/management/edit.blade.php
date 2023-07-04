@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 
-@section('title')Incluir Manutenção
+@section('title')Correção de dados
  {{ $title }}
 @endsection
 
@@ -11,7 +11,7 @@
 @section('content')
 	@component('components.breadcrumb')
 		@slot('breadcrumb_title')
-			<h3>Incluir Manutenção</h3>
+			<h3>Corrigir Dados</h3>
 		@endslot
 		<li class="breadcrumb-item">Base</li>
 		<li class="breadcrumb-item active">Corrigir</li>
@@ -32,27 +32,25 @@
                                     <label for="exampleFormControlInput1">A Oficina</label>
                                         <select class="form-select" name="id_oficina" size="1" required="">
                                         @foreach ($oficinas as $oficina)
-                                        <option>Selecione uma oficina</option>
-                                            <option value="{{$oficina->id}}">{{$oficina->nome}}</option>
-                                        @endforeach
+                                        <option value="{{$oficina->id}}">{{$oficina->nome}} : {{$oficina->especializacao}}</option>
+                                         @endforeach
                                         </select>
                                     </div></br>
                                     <div class="col-sm-12">
                                         <label for="exampleFormControlInput1">O Veiculo</label>
                                         <select class="form-select" name="id_veiculo" size="1" required="">
                                         @foreach ($veiculos as $veiculo)
-                                        <option>Selecione uma placa</option>
-                                            <option value="{{$veiculo->id}}">{{$veiculo->placa}}</option>
+                                         <option value="{{$veiculo->id}}">{{$veiculo->placa}}</option>
                                         @endforeach
                                         </select>
                                     </div></br>
                                     <div class="color-box">
                                         <label for="exampleFormControlInput1">Tipo de Serviço</label>
-                                        <input type="text" class="form-control" name="servico" id="exampleFormControlInput1" placeholder="motivo da manutenção" required="">
+                                        <input type="text" class="form-control" name="servico" value="{{ $manutencoes->servico }}" id="exampleFormControlInput1" placeholder="motivo da manutenção" required="">
                                     </div></br>
                                     <div class="color-box">
                                         <label for="exampleFormControlInput1">Comentário</label>
-                                        <input type="text" class="form-control" name="comentario" id="exampleFormControlInput1" placeholder="">
+                                        <input type="text" class="form-control" name="comentario" value="{{ $manutencoes->comentario }}" id="exampleFormControlInput1" placeholder="">
                                     </div><p></p></br>
                                     <div class="color-box">
                                     <input class="btn btn-success" type="submit" value="Actualizar">

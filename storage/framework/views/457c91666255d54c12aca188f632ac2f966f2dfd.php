@@ -5,6 +5,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startPush('css'); ?>
+<script src="https://cdn.jsdelivr.net/npm/imask"></script>
 <?php $__env->stopPush(); ?>
 <?php $__env->startSection('content'); ?>
     <?php $__env->startComponent('components.breadcrumb'); ?>
@@ -27,23 +28,23 @@
                   <div class="card-body">
                     <div class="color-box">
                       <label for="exampleFormControlInput1">Nome do responsável</label>
-                      <input type="text" class="form-control" name="responsavel" id="exampleFormControlInput1">
+                      <input type="text" class="form-control" name="responsavel" id="exampleFormControlInput1" required="">
                     </div></br>
                     <div class="color-box">
                       <label for="exampleFormControlInput1">Contacto do responsável</label>
-                      <input type="text" class="form-control" name="cresponsavel" data-mask="(00) 0000-0000" id="exampleFormControlInput1">
+                      <input type="text" class="form-control" name="cresponsavel" id="contacto" required="">
                     </div></br>
                     <div class="color-box">
                       <label for="exampleFormControlInput1">Nome do aluno</label>
-                      <input type="text" class="form-control" name="aluno" id="exampleFormControlInput1">
+                      <input type="text" class="form-control" name="aluno" id="exampleFormControlInput1" required="">
                     </div></br>
                     <div class="row">
                      <div class="col-sm-12 col-xl-6">
                         <label for="exampleFormControlInput1">Nascimento</label>
-                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" placeholder="nascimento">
+                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" required="">
                     </div>
                       <div class="col-sm-12 col-xl-6">
-                        <label for="exampleFormControlInput1">Sexo</label>
+                        <label for="exampleFormControlInput1" required="">Sexo</label>
                             <select class="form-select" name="sexo" size="1">
                                 <option>M</option>
                                 <option>F</option>
@@ -52,12 +53,15 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-12 col-xl-6">
-                        <label for="exampleFormControlInput1">Turno</label>
-                        <input type="text" class="form-control" name="turno" id="exampleFormControlInput1">
+                        <label for="exampleFormControlInput1" required="">Turno</label>
+                            <select class="form-select" name="turno" size="1">
+                                <option>Manhã</option>
+                                <option>Tarde</option>
+                            </select>
                       </div>
                       <div class="col-sm-12 col-xl-6">
                           <label for="exampleFormControlInput1">Paragem</label>
-                          <input type="text" class="form-control" name="paragem" id="exampleFormControlInput1">
+                          <input type="text" class="form-control" name="paragem" id="exampleFormControlInput1" required="">
                       </div>
                     </div>
                     <div class="color-box">
@@ -79,6 +83,25 @@
 
     <?php $__env->startPush('scripts'); ?>  
         <script src="<?php echo e(asset('assets/js/tooltip-init.js')); ?>"></script>  
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById('contacto');
+            var maskOptions = {
+            mask: '+{258} 00 000 0000'
+            };
+            var mask = IMask(element, maskOptions);
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById('numero-documentos');
+            var maskOptions = {
+            mask: '00000000/0'
+            };
+            var mask = IMask(element, maskOptions);
+        });
+    </script>
     <?php $__env->stopPush(); ?>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.admin.master', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH E:\sgfte\theme\resources\views/admin/estudants/create.blade.php ENDPATH**/ ?>
