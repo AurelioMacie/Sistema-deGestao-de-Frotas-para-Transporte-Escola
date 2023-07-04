@@ -5,6 +5,7 @@
 @endsection
 
 @push('css')
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/tabela.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/select2.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/owlcarousel.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/range-slider.css')}}">
@@ -13,10 +14,10 @@
 @section('content')
 	@component('components.breadcrumb')
 		@slot('breadcrumb_title')
-			<h3>Rotas</h3>
+			<h3>Visualização de rotas</h3>
 		@endslot
 		<li class="breadcrumb-item">Base</li>
-		<li class="breadcrumb-item active">Cadastrar rotas</li>
+		<li class="breadcrumb-item active">Visualizar</li>
 	@endcomponent
 	
 	<div class="container-fluid">
@@ -26,7 +27,8 @@
 			  <div class="card-header pb-0">
 				<h5 class="m-b-0">Rota</h5>
 			  </div>
-			  <table class="table">
+              <div class="card-body">
+			  <table>
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -44,7 +46,7 @@
                                 <th>{{ $rota->destino }}</th>
 								<th>{{ $rota->descricao }}</th>
 								<th class="d-flex">
-                                    <a href="{{ route('rota-edit',['id'=>$rota->id]) }}" class="btn btn-primary">
+                                    <a href="{{ route('rota-edit',['id'=>$rota->id]) }}" class="btn btn-primary me-1">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
                                             <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
                                         </svg>
@@ -63,6 +65,7 @@
                         @endforeach
                         </tbody>
                 	</table>
+                    </div>
 			 </div>
 		  </div>
 		</div>

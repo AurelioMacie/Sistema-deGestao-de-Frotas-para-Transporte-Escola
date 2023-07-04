@@ -5,6 +5,7 @@
 @endsection
 
 @push('css')
+<script src="https://cdn.jsdelivr.net/npm/imask"></script>
 @endpush
 
 @section('content')
@@ -29,19 +30,19 @@
 				<div class="card-body">
 					<div class="color-box">
 						<label for="exampleFormControlInput1">Nome</label>
-						<input type="text" class="form-control" value="{{ $oficinas->nome }}" name="nome" id="exampleFormControlInput1" placeholder="nome">
+						<input type="text" class="form-control" value="{{ $oficinas->nome }}" name="nome" id="exampleFormControlInput1" required="">
 					</div></br>
 					<div class="color-box">
 						<label for="exampleFormControlInput1">Telefone</label>
-						<input type="text" class="form-control" value="{{ $oficinas->telefone }}" name="telefone" id="exampleFormControlInput1" placeholder="telefone">
+						<input type="text" class="form-control" value="{{ $oficinas->telefone }}" name="telefone" id="contacto" required="">
 					</div></br>
 					<div class="color-box">
 						<label for="exampleFormControlInput1">Endereço</label>
-						<input type="text" class="form-control" value="{{ $oficinas->endereco }}" name="endereco" id="exampleFormControlInput1" placeholder="endereço">
+						<input type="text" class="form-control" value="{{ $oficinas->endereco }}" name="endereco" id="exampleFormControlInput1" required="">
 					</div></br>
 					<div class="color-box">
 						<label for="exampleFormControlInput1">Ramo de especialização</label>
-						<input type="text" class="form-control" value="{{ $oficinas->especializacao }}" name="especializacao" id="exampleFormControlInput1" placeholder="especialização">
+						<input type="text" class="form-control" value="{{ $oficinas->especializacao }}" name="especializacao" id="exampleFormControlInput1" required="">
 					</div></p></br>
 					<div class="color-box">
 						<input class="btn btn-success" type="submit" value="Actualizar">
@@ -57,6 +58,15 @@
 	<script src="{{ asset('assets/js/notify/bootstrap-notify.min.js') }}"></script>
     <script src="{{ asset('assets/js/icons/icons-notify.js') }}"></script>
     <script src="{{ asset('assets/js/icons/flag-icon-clipart.js') }}"></script>
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var element = document.getElementById('contacto');
+            var maskOptions = {
+            mask: '+{258} 00 000 0000'
+            };
+            var mask = IMask(element, maskOptions);
+        });
+    </script>
 	@endpush
 
 @endsection

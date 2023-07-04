@@ -27,9 +27,11 @@ class ManutencaoController extends Controller
     }
 
     public function edit($id){
-        $manutencoes = Manutencao::where('id',$id)->first();
+        $veiculos = Veiculo::all();
+        $oficinas = Oficina::all();
+        $manutencoes = Manutencao::all()->where('id',$id)->first();
         if(!empty($manutencoes)){
-            return view ('admin.management.edit', compact('manutencoes'));
+            return view ('admin.management.edit', compact('manutencoes','oficinas','veiculos'));
         }else{
             return redirect()->route('manutencao');
         }

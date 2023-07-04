@@ -29,11 +29,11 @@
                         <div class="card-body">
                             <div class="color-box">
                                 <label for="nome">Nome Escola</label>
-                                <input type="text" class="form-control" value="{{ $escolas->nome }}" name="nome" placeholder="nome da escola">
+                                <input type="text" class="form-control" value="{{ $escolas->nome }}" name="nome" required="">
                             </div></br>
                             <div class="color-box">
                                 <label for="localizacao">Localização</label>
-                                <input type="text" class="form-control" value="{{ $escolas->localizacao }}" name="localizacao" placeholder="localizacao">
+                                <input type="text" class="form-control" value="{{ $escolas->localizacao }}" name="localizacao" required="">
                             </div><p></p></br>
                             <div class="color-box">
                                 <input class="btn btn-success" type="submit" value="Actualizar">
