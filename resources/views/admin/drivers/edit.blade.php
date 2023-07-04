@@ -32,7 +32,7 @@
                             <input type="text" class="form-control" value="{{ $motoristas->nome }}" name="nome" id="exampleFormControlInput1" placeholder="nome">
                         </div></br>
                         <div class="color-box">
-                            <label for="exampleFormControlInput1">Telefone</label>
+                            <label for="exampleFormControlInput1">Contacto</label>
                             <input type="text" class="form-control" value="{{ $motoristas->telefone }}" name="telefone" id="exampleFormControlInput1" placeholder="telefone">
                         </div></br>
                         <div class="color-box">
