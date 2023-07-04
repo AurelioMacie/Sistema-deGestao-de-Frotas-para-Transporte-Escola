@@ -31,7 +31,7 @@
                     </div></br>
                     <div class="color-box">
                       <label for="exampleFormControlInput1">Contacto do responsável</label>
-                      <input type="text" class="form-control" name="cresponsavel" id="exampleFormControlInput1">
+                      <input type="text" class="form-control" name="cresponsavel" data-mask="(00) 0000-0000" id="exampleFormControlInput1">
                     </div></br>
                     <div class="color-box">
                       <label for="exampleFormControlInput1">Nome do aluno</label>
@@ -39,8 +39,8 @@
                     </div></br>
                     <div class="row">
                      <div class="col-sm-12 col-xl-6">
-                                <label for="exampleFormControlInput1">Nascimento</label>
-                                <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" placeholder="nascimento">
+                        <label for="exampleFormControlInput1">Nascimento</label>
+                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" placeholder="nascimento">
                     </div>
                       <div class="col-sm-12 col-xl-6">
                         <label for="exampleFormControlInput1">Sexo</label>
@@ -52,8 +52,8 @@
                     </div>
                     <div class="row">
                       <div class="col-sm-12 col-xl-6">
-                          <label for="exampleFormControlInput1">Turno</label>
-                          <input type="text" class="form-control" name="turno" id="exampleFormControlInput1">
+                        <label for="exampleFormControlInput1">Turno</label>
+                        <input type="text" class="form-control" name="turno" id="exampleFormControlInput1">
                       </div>
                       <div class="col-sm-12 col-xl-6">
                           <label for="exampleFormControlInput1">Paragem</label>

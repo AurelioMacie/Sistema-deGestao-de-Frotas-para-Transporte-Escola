@@ -15,4 +15,5 @@ class Oficina extends Model
         'telefone',
         'endereco',
     ];
+
 }

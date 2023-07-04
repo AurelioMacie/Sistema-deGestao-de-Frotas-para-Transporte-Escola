@@ -22,23 +22,27 @@
               <div class="card-header pb-0">
                 <h5>Alunos</h5>
               </div>
+
+              <form action="<?php echo e(route('estudante-update', ['id'=>$estudantes->id])); ?>" method="POST">
+              <?php echo csrf_field(); ?>
+              <?php echo method_field('PUT'); ?>
               <div class="card-body">
                 <div class="color-box">
                   <label for="exampleFormControlInput1">Nome do responsável</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1">
+                  <input type="text" class="form-control" value="<?php echo e($estudantes->responsavel); ?>" name="responsavel" id="exampleFormControlInput1">
                 </div></br>
                 <div class="color-box">
                   <label for="exampleFormControlInput1">Contacto do responsável</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1">
+                  <input type="text" class="form-control" value="<?php echo e($estudantes->cresponsavel); ?>" name="cresponsavel" id="exampleFormControlInput1">
                 </div></br>
                 <div class="color-box">
                   <label for="exampleFormControlInput1">Nome do aluno</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1">
+                  <input type="text" class="form-control" value="<?php echo e($estudantes->aluno); ?>" name="aluno" id="exampleFormControlInput1">
                 </div></br>
                 <div class="row">
                   <div class="col-sm-12 col-xl-6">
-                      <label for="exampleFormControlInput1">Nascimento</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1">
+                    <label for="exampleFormControlInput1">Nascimento</label>
+                    <input type="date" class="form-control" value="<?php echo e($estudantes->nascimento); ?>" name="nascimento" id="exampleFormControlInput1" placeholder="nascimento">
                   </div>
                   <div class="col-sm-12 col-xl-6">
                      <label for="exampleFormControlInput1">Sexo</label>
@@ -50,21 +54,26 @@
                 </div>
                 <div class="row">
                   <div class="col-sm-12 col-xl-6">
-                      <label for="exampleFormControlInput1">Turno</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1">
+                    <label for="exampleFormControlInput1">Turno</label>
+                    <input type="text" class="form-control" value="<?php echo e($estudantes->turno); ?>" name="turno" id="exampleFormControlInput1">
                   </div>
                   <div class="col-sm-12 col-xl-6">
-                      <label for="exampleFormControlInput1">Paragem</label>
-                      <input type="email" class="form-control" id="exampleFormControlInput1">
+                    <label for="exampleFormControlInput1">Paragem</label>
+                    <input type="text" class="form-control" value="<?php echo e($estudantes->paragem); ?>" name="paragem" id="exampleFormControlInput1">
                   </div>
                 </div>
                 <div class="color-box">
-                  <label for="exampleFormControlInput1">Escola</label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1">
-                </div><p></p></br>
+                    <label for="exampleFormControlInput1">Escola</label>
+                            <select class="form-select" name="escola_id" size="1">
+                            <?php $__currentLoopData = $escolas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $escola): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <option value="<?php echo e($escola->id); ?>"><?php echo e($escola->nome); ?></option>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </select>
+                    </div><p></p></br>
                 <div class="color-box">
-                  <button class="btn btn-success-gradien" type="button">Salvar</button>
+                <input class="btn btn-success" type="submit" value="Actualizar">
                 </div>
+              </form>
             </div>
           </div>
         </div>

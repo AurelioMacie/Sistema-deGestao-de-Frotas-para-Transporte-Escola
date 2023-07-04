@@ -80,6 +80,9 @@ Route::prefix('manutencao')->group(function(){
     Route::get('/', [ManutencaoController::class, 'index'])->name('manutencao');
     Route::get('/create', [ManutencaoController::class, 'create'])->name('manutencao-create');
     Route::post('/', [ManutencaoController::class, 'store'])->name('manutencao-store');
+    Route::get('/{id}/edit', [ManutencaoController::class, 'edit'])->name('manutencao-edit');
+    Route::put('/{id}', [ManutencaoController::class, 'update'])->name('manutencao-update');
+    Route::delete('/{id}', [ManutencaoController::class, 'destroy'])->name('manutencao-destroy');
 });
 
 Route::prefix('rota')->group(function(){

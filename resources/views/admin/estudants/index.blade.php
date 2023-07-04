@@ -21,7 +21,6 @@
               <div class="card-header pb-0">
                 <h5>Estudantes</h5>
               </div>
-              
               <div class="card-body">
                     <table class="table">
                         <thead>

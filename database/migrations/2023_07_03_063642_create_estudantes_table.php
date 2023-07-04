@@ -22,7 +22,7 @@ class CreateEstudantesTable extends Migration
             $table->string('sexo');
             $table->string('turno');
             $table->string('paragem');
-            $table->foreignId("escola_id")->references("id")->on("escolas")->onDelete("cascade");
+            $table->foreignId('escola_id')->references('id')->on('escolas')->onDelete('cascade');
             $table->timestamps();
 
             

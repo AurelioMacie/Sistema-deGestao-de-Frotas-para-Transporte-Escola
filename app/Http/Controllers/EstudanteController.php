@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class EstudanteController extends Controller
 {
     public function index(){
-        $estudantes = Estudante::all();
+        $estudantes = Estudante::with('escola')->get();
         return view('admin.estudants.index', compact('estudantes'));
     }
 
@@ -24,9 +24,10 @@ class EstudanteController extends Controller
     }
 
     public function edit($id){
+        $escolas = Escola::all();
         $estudantes = Estudante::where('id',$id)->first();
         if(!empty($estudantes)){
-            return view ('admin.estudants.edit', compact('estudantes'));
+            return view ('admin.estudants.edit', compact('estudantes'), compact('escolas'));
         }else{
             return redirect()->route('estudante');
         }
@@ -34,7 +35,14 @@ class EstudanteController extends Controller
 
     public function update(Request $request, $id){
         $data = [
-            'responsavel' => $request-> nome,
+            'responsavel' => $request-> responsavel,
+            'cresponsavel' => $request-> cresponsavel,
+            'aluno' => $request-> aluno,
+            'nascimento' => $request-> nascimento,
+            'sexo' => $request-> sexo,
+            'turno' => $request-> turno,
+            'paragem' => $request-> paragem,
+            'escola_id' => $request-> escola_id,
         ];
         Estudante::where('id',$id)->update($data);
         return redirect()->route('estudante');
