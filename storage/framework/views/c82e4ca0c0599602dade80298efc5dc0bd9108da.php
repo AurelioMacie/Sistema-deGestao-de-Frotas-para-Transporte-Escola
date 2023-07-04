@@ -34,7 +34,7 @@
                         </div></br>
                         <div class="color-box">
                             <label for="exampleFormControlInput1">Telefone</label>
-                            <input type="text" class="form-control" name="telefone" id="contacto" placeholder="(+258) ##-###-##-##" required="">
+                            <input type="text" class="form-control" name="telefone" id="contacto" required="">
                         </div></br>
                         <div class="color-box">
                             <label for="exampleFormControlInput1">Número da carta de condução</label>

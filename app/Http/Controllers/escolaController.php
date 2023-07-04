@@ -18,7 +18,7 @@ class EscolaController extends Controller
 
     public function store(Request $request){
         Escola::create($request->all());
-        return redirect()->route('escola');
+        return redirect()->route('escola-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
     }
 
     public function edit($id){

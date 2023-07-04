@@ -18,7 +18,7 @@ class OficinaController extends Controller
 
     public function store(Request $request){
         Oficina::create($request->all());
-        return redirect()->route('oficina');
+        return redirect()->route('oficina-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
 
     }
 

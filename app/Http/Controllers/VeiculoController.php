@@ -18,7 +18,7 @@ class VeiculoController extends Controller
 
     public function store(Request $request){
         Veiculo::create($request->all());
-        return redirect()->route('veiculo');
+        return redirect()->route('veiculo-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
 
     }
 

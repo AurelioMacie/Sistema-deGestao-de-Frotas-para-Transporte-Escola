@@ -1,6 +1,6 @@
 
 
-<?php $__env->startSection('title'); ?>Visualização de Dados<?php echo e($title); ?>
+<?php $__env->startSection('title'); ?>Estudantes<?php echo e($title); ?>
 
 <?php $__env->stopSection(); ?>
 
@@ -10,10 +10,10 @@
 <?php $__env->startSection('content'); ?>
     <?php $__env->startComponent('components.breadcrumb'); ?>
         <?php $__env->slot('breadcrumb_title'); ?>
-            <h3>Estudantes</h3>
+            <h3>Visualização de estudantes </h3>
         <?php $__env->endSlot(); ?>
         <li class="breadcrumb-item">Base</li>
-        <li class="breadcrumb-item active">Visualizar dados</li>
+        <li class="breadcrumb-item active">Visualizar</li>
     <?php echo $__env->renderComponent(); ?>
 
     <div class="container-fluid">

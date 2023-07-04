@@ -56,5 +56,18 @@
     </div>
     <!-- latest jquery-->
     <?php if ($__env->exists('layouts.admin.partials.js')) echo $__env->make('layouts.admin.partials.js', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+    <?php if(session('success')): ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sucesso!',
+            text: "<?php echo e(session('success')); ?>",
+            showConfirmButton: false,
+            timer: 3000 // Exibe o popup por 3 segundos
+        });
+    </script>
+    <?php endif; ?>
   </body>
 </html><?php /**PATH E:\sgfte\theme\resources\views/layouts/admin/master.blade.php ENDPATH**/ ?>

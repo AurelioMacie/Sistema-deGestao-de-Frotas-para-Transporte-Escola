@@ -56,5 +56,18 @@
     </div>
     <!-- latest jquery-->
     @includeIf('layouts.admin.partials.js')
+
+    @if(session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sucesso!',
+            text: "{{ session('success') }}",
+            showConfirmButton: false,
+            timer: 3000 // Exibe o popup por 3 segundos
+        });
+    </script>
+    @endif
   </body>
 </html>
