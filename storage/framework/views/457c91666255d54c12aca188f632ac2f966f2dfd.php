@@ -41,7 +41,7 @@
                     <div class="row">
                      <div class="col-sm-12 col-xl-6">
                         <label for="exampleFormControlInput1">Nascimento</label>
-                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" required="">
+                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" required="" max="<?php echo e(date('Y-m-d')); ?>" value="<?php echo e(old('nascimento')); ?>">
                     </div>
                       <div class="col-sm-12 col-xl-6">
                         <label for="exampleFormControlInput1" required="">Sexo</label>
@@ -71,7 +71,24 @@
                             <option value="<?php echo e($escola->id); ?>"><?php echo e($escola->nome); ?></option>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </select>
-                    </div><p></p></br>
+                    </div>
+                    
+                    <div class="card-header pb-0">
+                        <?php $__errorArgs = ['nascimento'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                            <div class="switchalert error">
+                                <p><?php echo e($message); ?></p>
+                            </div>
+                        <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+                    </div>
+
+                    <p></p></br>
                     <div class="color-box">
                       <button class="btn btn-success-gradien" type="submit">Salvar</button>
                     </div>

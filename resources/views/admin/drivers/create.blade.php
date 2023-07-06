@@ -47,11 +47,6 @@
                             <div class="col-sm-12 col-xl-6">
                                 <label for="exampleFormControlInput1">Nascimento</label>
                                 <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" max="{{ date('Y-m-d') }}" value="{{ old('nascimento') }}">
-                                    @error('nascimento')
-                                        <div class="switchalert error">
-                                            <p>{{ $message }}</p>
-                                        </div>
-                                    @enderror
                             </div>
                             <div class="col-sm-12 col-xl-6">
                             <label for="exampleFormControlInput1" required="">Sexo</label>

@@ -40,7 +40,7 @@
                     <div class="row">
                      <div class="col-sm-12 col-xl-6">
                         <label for="exampleFormControlInput1">Nascimento</label>
-                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" required="">
+                        <input type="date" class="form-control" name="nascimento" id="exampleFormControlInput1" required="" max="{{ date('Y-m-d') }}" value="{{ old('nascimento') }}">
                     </div>
                       <div class="col-sm-12 col-xl-6">
                         <label for="exampleFormControlInput1" required="">Sexo</label>
@@ -70,7 +70,17 @@
                             <option value="{{$escola->id}}">{{$escola->nome}}</option>
                             @endforeach
                             </select>
-                    </div><p></p></br>
+                    </div>
+                    
+                    <div class="card-header pb-0">
+                        @error('nascimento')
+                            <div class="switchalert error">
+                                <p>{{ $message }}</p>
+                            </div>
+                        @enderror
+                    </div>
+
+                    <p></p></br>
                     <div class="color-box">
                       <button class="btn btn-success-gradien" type="submit">Salvar</button>
                     </div>

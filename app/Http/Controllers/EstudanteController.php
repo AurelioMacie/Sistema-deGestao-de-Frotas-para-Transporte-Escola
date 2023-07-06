@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Estudante;
 use App\Models\Escola;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class EstudanteController extends Controller
 {
@@ -19,8 +21,28 @@ class EstudanteController extends Controller
     }
 
     public function store(Request $request){
+        
+        $validator = Validator::make($request->all(), [
+            'nascimento' => 'required|date|before_or_equal:today',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('motorista/create')->withErrors($validator)->withInput();
+        }
+
+        $dataNascimento = Carbon::parse($request->input('nascimento'));
+        $idade = $dataNascimento->diffInYears(Carbon::now());
+
+            if ($idade < 10) {
+            //   return redirect()->route('estudante-create')->with('success', 'OPS!!!!!');
+            return redirect('estudante/create')
+            ->withErrors(['nascimento' =>
+             'Apenas transportamos alunos com idade igual ou superior a 10 anos!'])
+            ->withInput();
+        }
+
         Estudante::create($request->all());
-        return redirect()->route('estudante-create')->with('success', 'Seu cadastro foi realizado com sucesso!');;
+        return redirect()->route('estudante-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
     }
 
     public function edit($id){
