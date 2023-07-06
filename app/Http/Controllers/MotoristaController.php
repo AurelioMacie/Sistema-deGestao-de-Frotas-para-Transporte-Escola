@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Motorista;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 
 class MotoristaController extends Controller
 {
@@ -17,6 +19,22 @@ class MotoristaController extends Controller
     }
 
     public function store(Request $request){
+        $validator = Validator::make($request->all(), [
+            'nascimento' => 'required|date|before_or_equal:today',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('motorista/create')->withErrors($validator)->withInput();
+        }
+
+        $dataNascimento = Carbon::parse($request->input('nascimento'));
+        $idade = $dataNascimento->diffInYears(Carbon::now());
+        // $idade = $dataNascimento->age;
+
+            if ($idade < 18) {
+            return redirect('motorista/create')->withErrors(['nascimento' => 'Apenas contratamos condutores com idade igual ou superior a 18 anos!'])->withInput();
+        }
+
         Motorista::create($request->all());
         return redirect()->route('motorista-create')->with('success', 'Seu cadastro foi realizado com sucesso!');
     }
