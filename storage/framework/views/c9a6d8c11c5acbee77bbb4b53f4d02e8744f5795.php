@@ -25,6 +25,18 @@
                     <div class="card-header pb-0">
                         <h5>Motoristas</h5>
                     </div>
+                    <?php $__errorArgs = ['nascimento'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                        <div class="switchalert error">
+                            <p><?php echo e($message); ?></p>
+                        </div>
+                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                     <form action="<?php echo e(route('motorista-update', ['id'=>$motoristas->id])); ?>" method="POST">
                     <?php echo csrf_field(); ?>
                     <?php echo method_field('PUT'); ?>
@@ -48,7 +60,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-xl-6">
                                 <label for="exampleFormControlInput1">Nascimento</label>
-                                <input type="date" class="form-control" value="<?php echo e($motoristas->nascimento); ?>" name="nascimento" id="exampleFormControlInput1" required="">
+                                <input type="date" class="form-control" value="<?php echo e($motoristas->nascimento); ?>" name="nascimento" id="exampleFormControlInput1" required="" max="<?php echo e(date('Y-m-d')); ?>" value="<?php echo e(old('nascimento')); ?>">
                             </div>
                             <div class="col-sm-12 col-xl-6">
                             <label for="exampleFormControlInput1" required="">Sexo</label>

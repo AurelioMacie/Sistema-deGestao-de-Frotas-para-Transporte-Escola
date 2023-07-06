@@ -89,7 +89,7 @@
             document.addEventListener("DOMContentLoaded", function() {
                 var element = document.getElementById('contacto');
                 var maskOptions = {
-                mask: '+{258} 00-000-00-00'
+                mask: '+{258} 00 000 00 00'
                 };
                 var mask = IMask(element, maskOptions);
             });

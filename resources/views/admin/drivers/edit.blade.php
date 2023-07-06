@@ -24,6 +24,11 @@
                     <div class="card-header pb-0">
                         <h5>Motoristas</h5>
                     </div>
+                    @error('nascimento')
+                        <div class="switchalert error">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @enderror
                     <form action="{{ route('motorista-update', ['id'=>$motoristas->id]) }}" method="POST">
                     @csrf
                     @method('PUT')
@@ -47,7 +52,7 @@
                         <div class="row">
                             <div class="col-sm-12 col-xl-6">
                                 <label for="exampleFormControlInput1">Nascimento</label>
-                                <input type="date" class="form-control" value="{{ $motoristas->nascimento }}" name="nascimento" id="exampleFormControlInput1" required="">
+                                <input type="date" class="form-control" value="{{ $motoristas->nascimento }}" name="nascimento" id="exampleFormControlInput1" required="" max="{{ date('Y-m-d') }}" value="{{ old('nascimento') }}">
                             </div>
                             <div class="col-sm-12 col-xl-6">
                             <label for="exampleFormControlInput1" required="">Sexo</label>

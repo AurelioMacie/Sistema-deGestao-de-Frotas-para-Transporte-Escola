@@ -19,6 +19,7 @@ class MotoristaController extends Controller
     }
 
     public function store(Request $request){
+        
         $validator = Validator::make($request->all(), [
             'nascimento' => 'required|date|before_or_equal:today',
         ]);
@@ -29,10 +30,12 @@ class MotoristaController extends Controller
 
         $dataNascimento = Carbon::parse($request->input('nascimento'));
         $idade = $dataNascimento->diffInYears(Carbon::now());
-        // $idade = $dataNascimento->age;
 
             if ($idade < 18) {
-            return redirect('motorista/create')->withErrors(['nascimento' => 'Apenas contratamos condutores com idade igual ou superior a 18 anos!'])->withInput();
+            return redirect('motorista/create')
+            ->withErrors(['nascimento' =>
+             'Apenas contratamos condutores com idade igual ou superior a 18 anos!'])
+            ->withInput();
         }
 
         Motorista::create($request->all());
@@ -49,6 +52,7 @@ class MotoristaController extends Controller
     }
 
     public function update(Request $request, $id){
+        
         $data = [
             'nome' => $request-> nome,
             'telefone' => $request-> telefone,
