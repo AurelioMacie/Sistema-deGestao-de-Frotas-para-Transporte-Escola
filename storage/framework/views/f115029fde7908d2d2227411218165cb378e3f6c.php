@@ -15,10 +15,10 @@
 <?php $__env->startSection('content'); ?>
 	<?php $__env->startComponent('components.breadcrumb'); ?>
 		<?php $__env->slot('breadcrumb_title'); ?>
-			<h3>Rotas</h3>
+			<h3>Visualização de rotas</h3>
 		<?php $__env->endSlot(); ?>
 		<li class="breadcrumb-item">Base</li>
-		<li class="breadcrumb-item active">Cadastrar rotas</li>
+		<li class="breadcrumb-item active">Visualizar</li>
 	<?php echo $__env->renderComponent(); ?>
 	
 	<div class="container-fluid">
